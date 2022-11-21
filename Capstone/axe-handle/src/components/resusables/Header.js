@@ -37,8 +37,9 @@ const Header = (props) => {
 return (
     <div className="flex-row full-width bg-color header-padding center">
         <div className="third-width">
-            <a href="/buy" className='firstAnchor center'>Buy</a>
-            
+            <a href="/" className='firstAnchor center'>File</a>
+            <a href="/" className='firstAnchor center'>Edit</a>
+            <a href="/" className='firstAnchor center'>Help</a>
         </div>
         <div className="third-width center ">
             <div className = "center">
