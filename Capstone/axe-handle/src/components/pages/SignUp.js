@@ -8,6 +8,7 @@ import axios from 'axios'
 const SignUp = () => {
 
     const navigator = useNavigate()
+    const [message, setMessage] = useState("")
     const [user, setUser] = useState({
         firstName: '',
         lastName: '',
@@ -23,17 +24,46 @@ const SignUp = () => {
         setUser(tempUser)
     }
 
+    const validation = () => {
+        const isAnythingThere = user.email !== '' && user.password !== '' ? true : false
+        const isValidEmail = user.email.includes('@') && user.email.includes('.com') ? true : false
+        const upper = /[A-Z]/.test(user.password);
+        const lower = /[a-z]/.test(user.password);
+        const isValidPassword = user.password.length > 6 && (upper && lower) ? true : false
+        
+        return isAnythingThere && isValidEmail && isValidPassword
+    }
+
+
     const submitHandler = () => {
 
-        axios.post('http://localhost:8080/signUp', user)
-        .then((response) => {
-            console.log(response.data)
-            navigator('/sign-in')
-        }).catch((e) => {
-            console.log(e)
-        })
+        if (validation()) {
+
+            axios.post('http://localhost:8080/signUp', user)
+                .then((response) => {
+                    navigator('/sign-in')
+                }).catch((e) => {
+                    console.log(e)
+                    setMessage(e.response.data)
+                })
+        } else {
+            setMessage("INVALID INPUTS, YOURE WRONG MATE")
+        }
 
     }
+
+    const toggleErrorMessage = () => {
+        if(message !== "") {
+            return (
+                <div>
+                    {message}
+                </div>
+            )
+        } 
+        return null
+    }
+
+   
 
 
 

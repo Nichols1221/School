@@ -38,7 +38,7 @@ const SignIn = () => {
 
     return (
         <div className="flex-col full-view container">
-            <Header user = {user} setUser = {setUser}  />
+            
             <div className="center flex-col">
                 <h1>
                     Sign In

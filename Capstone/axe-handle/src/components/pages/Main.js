@@ -1,7 +1,6 @@
 
 import { useNavigate } from 'react-router'
-import { useEffect, useState } from 'react';
-import Header from '../reusables/Header';
+import {  useState } from 'react';
 import React from 'react'
 
 

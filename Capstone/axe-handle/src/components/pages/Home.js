@@ -1,11 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Header from '../reusables/Header';
+
 import Main from './Main'
 
 
 
-function Home() {
+function Home(props) {
 
   
     const [user, setUser] = useState({})
@@ -26,7 +26,7 @@ function Home() {
  
   return (
     <div className='flex-col full-cont'>
-      <Header user = {user} setUser = {setUser} />
+     
       <Main/>
       
     </div>
