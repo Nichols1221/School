@@ -1,6 +1,8 @@
 .logo {
     text-align: center;
     font-size: 35px;
-    
-    
+}
+
+.head-colors {
+    background-color: rgba(164, 250, 66, 0.541);
 }

@@ -69,7 +69,6 @@ const SignUp = () => {
 
     return (
         <div className="flex-col full-view container">
-            <Header user = {{}} setUser = {setUser} />
             <div className="center flex-col">
                 <h1>
                     Please sign up to continue

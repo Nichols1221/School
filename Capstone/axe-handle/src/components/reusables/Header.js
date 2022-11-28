@@ -37,8 +37,8 @@ const Header = (props) => {
 
 
 return (
-    <div className="flex-row flex-dis ">
-        <div className="flex-row third-width center flex-dis">
+    <div className="flex-row flex-dis head-colors">
+        <div className="flex-row third-width  center flex-dis">
             <a href="/" className='center third-width'>File</a>
             <a href="/" className='center third-width'>Edit</a>
             <a href="/" className='center  third-width'>Help</a>
