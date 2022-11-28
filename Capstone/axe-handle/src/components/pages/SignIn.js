@@ -1,5 +1,5 @@
-import Header from "./Header"
-import '../css/components/sign-up.css'
+import Header from "../reusables/Header"
+
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import axios from 'axios'
