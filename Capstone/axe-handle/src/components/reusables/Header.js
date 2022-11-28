@@ -1,6 +1,7 @@
 
 import { useNavigate } from 'react-router'
-import '../../css/reusables/flex.css'
+import "../../css/pages/header.css"
+
 
 const Header = (props) => { 
     
@@ -16,18 +17,18 @@ const Header = (props) => {
         console.log(props.user)
         if (props.user.id === undefined) {
             return (
-                <div className=''>
-                <div>
-                    <a className = " " href='/sign-up'>Sign Up</a>
-                    <a className = " " href='/sign-in'>Sign In</a> 
+                <div className=' flex-dis center'>
+                    
+                    <a className = " right half-width center" href='/sign-up'>Sign Up</a>
+                    <a className = " right half-width" href='/sign-in'>Sign In</a> 
+                    
                 </div>
                 
-            </div>
             )
         } else {
             return (
-                <div className="">
-                    <button className='' onClick={clickHandler}>Sign Out</button>
+                <div className="center">
+                    <button className='right' onClick={clickHandler}>Sign Out</button>
                 </div>
             )
         }
@@ -36,25 +37,25 @@ const Header = (props) => {
 
 
 return (
-    <div className="flex-col flex-dis">
-        <div className="flex-row flex-dis">
-            <a href="/" className=''>File</a>
-            <a href="/" className=''>Edit</a>
-            <a href="/" className=''>Help</a>
+    <div className="flex-row flex-dis ">
+        <div className="flex-row third-width center flex-dis">
+            <a href="/" className='center third-width'>File</a>
+            <a href="/" className='center third-width'>Edit</a>
+            <a href="/" className='center  third-width'>Help</a>
         </div>
-        <div className="flex-row ">
-            <div className = "">
-                <a className = "" href='/'> AxE</a>
+        <div className="flex-row third-width center">
+            <div className = "center center-text">
+                <a className = "center  logo" href='/'> AxE</a>
             </div>
 
         </div>
-        <div className="flex-row ">
-            <div>
+        <div className="flex-row third-width  center right    flex-dis">
+            <div className='full-width center'>
                 {renderSignInOutButtons()}
             </div>
             
-            <div className="">
-                {props.user.firstName}
+            <div className="full-width">
+                Welcome {props.user.firstName}
             </div>
 
         </div>

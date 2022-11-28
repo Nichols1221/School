@@ -9,6 +9,8 @@ const SignUp = () => {
 
     const navigator = useNavigate()
     const [user, setUser] = useState({
+        firstName: '',
+        lastName: '',
         email: '',
         password: ''
     })
@@ -43,6 +45,10 @@ const SignUp = () => {
                     Please sign up to continue
                 </h1>
                 <div className="sign-up-form flex-col">
+                    <label>First Name</label>
+                    <input placeholder="TYPE HERE" type='text' name="firstName" value={user.firstName} onChange={changeHandler} />
+                    <label>Last Name</label>
+                    <input placeholder="TYPE HERE" type='text' name="lastName" value={user.lastName} onChange={changeHandler} />
                     <label>Username</label>
                     <input placeholder="TYPE HERE" type='text' name="email" value={user.email} onChange={changeHandler} />
                     <label>Password</label>

@@ -23,7 +23,7 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 
-	@RequestMapping(value = "/signUp", method = RequestMethod.POST)
+	@RequestMapping(value = "/signUpAdmin", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Object> signUp(@RequestBody Admin admin) {
 
@@ -39,7 +39,7 @@ public class AdminController {
 
 	}
 
-	@RequestMapping(value = "/signIn", method = RequestMethod.POST)
+	@RequestMapping(value = "/signInAdmin", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Object> signIn(@RequestBody Admin admin) {
 
