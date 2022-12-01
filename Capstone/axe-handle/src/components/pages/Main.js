@@ -1,15 +1,15 @@
 
 import { useNavigate } from 'react-router'
-import {  useState } from 'react';
+import { useState } from 'react';
 import React from 'react'
 
 
 
-    
 
 
 
-const Main = () =>  {
+
+const Main = () => {
 
     const [user, setUser] = useState({})
 
@@ -18,33 +18,33 @@ const Main = () =>  {
     const clickHandler = () => {
         navigator('/Equipment')
 
-    
+
     }
 
     const clickHandlerW = () => {
         navigator('/Workorder')
 
-    
+
     }
 
 
 
-  return (
-    <div className='flex-dis flex-col'>
-        
-        <div className='flex-row flex-dis '>
-            <button className='half-width center center-text' onClick={clickHandlerW}> Work Orders</button>
-            <button className='half-width center center-text' onClick={clickHandler}> Equipment</button>
-        </div>
-        <div>
-        <div className="flex-col full-view container">
-           
-            
-        </div>
+    return (
+        <div className='flex-dis flex-col'>
 
+            <div className='flex-row flex-dis '>
+                <button className='half-width center center-text' onClick={clickHandlerW}> Work Orders</button>
+                <button className='half-width center center-text' onClick={clickHandler}> Equipment</button>
+            </div>
+            <div>
+                <div className="flex-col full-view container">
+                    
+
+                </div>
+
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Main

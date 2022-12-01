@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './components/pages/Home';
 import SignIn from './components/pages/SignIn';
 import SignUp from './components/pages/SignUp';
+import Equipment from './components/pages/Equipment'
 import Equipmentnew from './components/pages/Equipmentnew'
 import Workordernew from './components/pages/Workordernew';
 import PageWrapper from './components/reusables/PageWrapper';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/Equipment" element={<Equipment />} />
         <Route path="/Equipmentnew" element={<Equipmentnew />} />
         <Route path="/Workordernew" element={<Workordernew />} />
 
