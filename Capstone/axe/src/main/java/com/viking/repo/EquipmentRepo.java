@@ -14,4 +14,6 @@ public interface EquipmentRepo extends JpaRepository<Equipment, Integer>{
 
 	 @Query(value = "select * from equipment where equipmentNumber = ?1", nativeQuery = true)
 	 	public Equipment findbyEN();
+	 
+	 
 }

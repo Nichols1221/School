@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router'
 import { useState } from 'react';
 import React from 'react'
+import ViewEquipment from './ViewEquipment';
 
 
 const Equipment = (props)=> {
@@ -14,7 +15,7 @@ const Equipment = (props)=> {
     }
 
     const clickHandlerE = () => {
-        navigator('/VeiwEquipment')
+        navigator('/ViewEquipment')
 
 
     }
@@ -24,7 +25,7 @@ const Equipment = (props)=> {
         if (props.user.id === undefined) {
             return (
 
-                <div className="center">
+                <div className="center full-cont">
                         Hello! Welcome to Auxilary Equipment. Here you are able to create equipment records and manage those records. Please sign up or sign in to continue.
                 </div>
                
@@ -34,9 +35,12 @@ const Equipment = (props)=> {
         } else {
             return (
 
-                <div className="flex-row flex-dis third-width">
-                <button className='general-buttons ' onClick={clickHandler}>New Equipment</button>
-                <button className='general-buttons ' onClick={clickHandlerE}>View Equipment</button>
+                <div className=" flex-dis flex-col  ">
+                    <div className='margin-auto'>
+                <button className='general-buttons  ' onClick={clickHandler}>New Equipment</button>
+                    </div>
+                    
+                    
             </div>
                
             )
@@ -46,15 +50,16 @@ const Equipment = (props)=> {
 
     return (
 
-        <div className="flex-col flex-dis ">
-            <div className="flex-row flex-dis">
+        <div className=" flex-dis full-cont ">
+            <div className=" flex-dis">
                 {renderButtons()}
                
-                <div className="flex-col six-width">
-                    
-                </div>
             </div>
-
+            <div className='margin-auto full-cont flex-col'>
+                <div>You're equipment
+                <ViewEquipment user={props.user} setUser={props.setUser}/>
+                    </div>
+            </div>
 
         </div>
 

@@ -1,12 +1,14 @@
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import axios from 'axios'
 
 
-const SignUp = () => {
+const SignUp = (props) => {
 
     const navigator = useNavigate()
+
+    
     const [message, setMessage] = useState("")
     const [user, setUser] = useState({
         firstName: '',

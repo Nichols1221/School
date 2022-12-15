@@ -16,6 +16,10 @@ public class UserService {
 		return userRepo.save(user);
 	}
 	
+	public User getUserById(Integer userId) {
+		return userRepo.findById(userId).get();
+	}
+	
 	public User signIn(User user) throws Exception {
 		User foundUser = userRepo.signIn(user.getEmail(), user.getPassword());
 

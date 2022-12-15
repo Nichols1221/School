@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.viking.entity.Equipment;
+import com.viking.entity.User;
 import com.viking.service.EquipmentService;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -21,16 +22,16 @@ public class EquipmentController {
 	@Autowired
 	EquipmentService equipmentService;
 
-	@RequestMapping(value = "/addEquip", 
+	@RequestMapping(value = "/addEquip/{userId}", 
 			method = RequestMethod.POST
 			)
 	@ResponseBody
-	public ResponseEntity<Object> addEquip(@RequestBody Equipment equipment) {
+	public ResponseEntity<Object> addEquip(@RequestBody Equipment equipment, @PathVariable Integer userId) {
 
 		try {
-			Equipment addedEquipment = equipmentService.save(equipment);
+			User user = equipmentService.addEquip(userId, equipment);
 
-			return new ResponseEntity<>(addedEquipment, HttpStatus.CREATED);
+			return new ResponseEntity<>(user, HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
 		} catch (Error e) {
@@ -45,6 +46,19 @@ public class EquipmentController {
 		try {
 			Equipment foundEquip = (equipmentService).getEquipByEn(equipmentNumber);
 			return new ResponseEntity<>(foundEquip, HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
+		} catch (Error e) {
+			return new ResponseEntity<>(e, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	@RequestMapping(value = "/deleteEquipById/{id}", method = RequestMethod.DELETE)
+	@ResponseBody
+	public ResponseEntity<Object> delete(@PathVariable Integer id) {
+		try {
+			 equipmentService.delete(id);
+			return new ResponseEntity<>(null, HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
 		} catch (Error e) {

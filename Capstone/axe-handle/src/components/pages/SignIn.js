@@ -1,13 +1,16 @@
 
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import axios from 'axios'
 
 
-const SignIn = () => {
+const SignIn = (props) => {
 
     const navigator = useNavigate()
+   
+    
+
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -29,6 +32,7 @@ const SignIn = () => {
         .then((response) => {
             console.log(response.data)
             localStorage.setItem("email", response.data.email)
+            props.setUser(response.data)
             navigator('/')
         }).catch((e) => {
             console.log(e)

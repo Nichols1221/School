@@ -1,11 +1,13 @@
 
+import { useNavigate } from "react-router"
 
 import "../../css/pages/header.css"
 
 
 const Header = (props) => { 
     
-        
+    const navigator = useNavigate()
+
 
     const clickHandler = () => {
         localStorage.removeItem('email')
@@ -14,7 +16,7 @@ const Header = (props) => {
     }
 
     const renderSignInOutButtons = () => {
-        console.log(props.user)
+       console.log(props.user)
         if (props.user.id === undefined) {
             return (
                 <div className=' flex-dis center'>

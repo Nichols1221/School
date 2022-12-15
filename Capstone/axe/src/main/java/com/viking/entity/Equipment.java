@@ -30,8 +30,7 @@ public class Equipment {
 		String manufacturer;
 	    @Column(name="model")
 		String model;
-	    @Column(name="date")
-		Date inServiceDate;
+	    
 	    
 	   
 	    
@@ -42,14 +41,14 @@ public class Equipment {
 
 
 		public Equipment(Integer id, String equipmentNumber, String nomen, String manufacturer, String model,
-				Date inServiceDate, Integer userCreated) {
+				 Integer userCreated) {
 			super();
 			this.id = id;
 			this.equipmentNumber = equipmentNumber;
 			this.nomen = nomen;
 			this.manufacturer = manufacturer;
 			this.model = model;
-			this.inServiceDate = inServiceDate;
+			
 			
 		}
 
@@ -94,14 +93,7 @@ public class Equipment {
 		}
 
 
-		public Date getInServiceDate() {
-			return inServiceDate;
-		}
-
-
-		public void setInServiceDate(Date inServiceDate) {
-			this.inServiceDate = inServiceDate;
-		}
+		
 
 
 		public Integer getId() {
@@ -112,8 +104,7 @@ public class Equipment {
 		@Override
 		public String toString() {
 			return "Equipment [id=" + id + ", equipmentNumber=" + equipmentNumber + ", nomen=" + nomen
-					+ ", manufacturer=" + manufacturer + ", model=" + model + ", inServiceDate=" + inServiceDate
-					+ ", userId=" ;
+					+ ", manufacturer=" + manufacturer + ", model=" + model + ", inServiceDate= userId=" ;
 		}
 
 		
