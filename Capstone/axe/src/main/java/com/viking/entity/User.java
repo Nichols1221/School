@@ -1,11 +1,17 @@
 package com.viking.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 
 	
@@ -28,6 +34,11 @@ import javax.persistence.Table;
 		String email;
 	    @Column(name="password", nullable = false)
 		String password;
+	    
+	    
+	    @OneToMany
+	    @JoinColumn(name="userId", referencedColumnName = "id")
+	    List<Equipment> equipment;
 		
 	    
 	    public User() {
@@ -35,13 +46,15 @@ import javax.persistence.Table;
 		}
 
 
-		public User(Integer id, String firstName, String lastName, String email, String password) {
+		public User(Integer id, String firstName, String lastName, String email, String password,
+				List<Equipment> equipment) {
 			super();
 			this.id = id;
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.email = email;
 			this.password = password;
+			this.equipment = equipment;
 		}
 
 
@@ -85,6 +98,16 @@ import javax.persistence.Table;
 		}
 
 
+		public List<Equipment> getEquipment() {
+			return equipment;
+		}
+
+
+		public void setEquipment(List<Equipment> equipment) {
+			this.equipment = equipment;
+		}
+
+
 		public Integer getId() {
 			return id;
 		}
@@ -93,8 +116,11 @@ import javax.persistence.Table;
 		@Override
 		public String toString() {
 			return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-					+ ", password=" + password + "]";
+					+ ", password=" + password + ", equipment=" + equipment + "]";
 		}
+
+
+		
 	  
 	    
 

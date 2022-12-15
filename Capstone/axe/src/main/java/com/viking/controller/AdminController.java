@@ -25,7 +25,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/signUpAdmin", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Object> signUp(@RequestBody Admin admin) {
+	public ResponseEntity<Object> signUpAdmin(@RequestBody Admin admin) {
 
 		try {
 			Admin signedUpAdmin = adminService.save(admin);
@@ -41,7 +41,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/signInAdmin", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Object> signIn(@RequestBody Admin admin) {
+	public ResponseEntity<Object> signInAdmin(@RequestBody Admin admin) {
 
 		try {
 			Admin someAdmin = adminService.signIn(admin);

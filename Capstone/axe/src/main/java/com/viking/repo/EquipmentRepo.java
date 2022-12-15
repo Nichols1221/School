@@ -9,8 +9,9 @@ import com.viking.entity.Equipment;
 @Repository
 public interface EquipmentRepo extends JpaRepository<Equipment, Integer>{
 	
-	 @Query(value = "select * from user where email = ?1 and password = ?2", nativeQuery = true)
-	    public Equipment signIn(String email, String password);
+	 @Query(value = "select * from equipment where userCreated = ?1", nativeQuery = true)
+	    public Equipment selectAll();
 
-	    
+	 @Query(value = "select * from equipment where equipmentNumber = ?1", nativeQuery = true)
+	 	public Equipment findbyEN();
 }

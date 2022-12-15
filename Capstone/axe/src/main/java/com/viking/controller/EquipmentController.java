@@ -21,7 +21,9 @@ public class EquipmentController {
 	@Autowired
 	EquipmentService equipmentService;
 
-	@RequestMapping(value = "/addEquip", method = RequestMethod.POST)
+	@RequestMapping(value = "/addEquip", 
+			method = RequestMethod.POST
+			)
 	@ResponseBody
 	public ResponseEntity<Object> addEquip(@RequestBody Equipment equipment) {
 

@@ -1,4 +1,3 @@
-import Header from "../reusables/Header"
 
 import { useState } from "react"
 import { useNavigate } from "react-router"
@@ -47,7 +46,7 @@ const SignUp = () => {
                     setMessage(e.response.data)
                 })
         } else {
-            setMessage("INVALID INPUTS, YOURE WRONG MATE")
+            setMessage("INVALID INPUTS")
         }
 
     }
@@ -68,21 +67,32 @@ const SignUp = () => {
 
 
     return (
-        <div className="flex-col full-view container">
+        <div className="flex-col full-cont">
             <div className="center flex-col">
                 <h1>
-                    Please sign up to continue
+                    Please sign up to continue. Password must contain 1 uppercase, 1 lowercase and be longer than 6 characters.
                 </h1>
-                <div className="sign-up-form flex-col">
-                    <label>First Name</label>
+                <div className="sign-up-form flex-col flex-dis center">
+                    <div className="center">
+                    <label >First Name</label>
                     <input placeholder="TYPE HERE" type='text' name="firstName" value={user.firstName} onChange={changeHandler} />
+                    </div>
+                    <div>
                     <label>Last Name</label>
                     <input placeholder="TYPE HERE" type='text' name="lastName" value={user.lastName} onChange={changeHandler} />
-                    <label>Username</label>
+                    </div>
+                    <div>
+                    <label>Email</label>
                     <input placeholder="TYPE HERE" type='text' name="email" value={user.email} onChange={changeHandler} />
+                    </div>
+                    <div>
                     <label>Password</label>
                     <input type='password' name="password" value={user.password} onChange={changeHandler} />
-                    <button onClick={submitHandler}>SUBMIT</button>    
+                    </div>
+                    <div>
+                    <button onClick={submitHandler}>SUBMIT</button>  
+                    </div>
+                    {toggleErrorMessage()}  
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 
-import { useNavigate } from 'react-router'
+
 import "../../css/pages/header.css"
 
 
 const Header = (props) => { 
     
-    const navigator = useNavigate()
+        
 
     const clickHandler = () => {
         localStorage.removeItem('email')
@@ -19,8 +19,8 @@ const Header = (props) => {
             return (
                 <div className=' flex-dis center'>
                     
-                    <a className = " right half-width center" href='/sign-up'>Sign Up</a>
-                    <a className = " right half-width" href='/sign-in'>Sign In</a> 
+                    <a className = " right half-width center text-decor" href='/sign-up'>Sign Up</a>
+                    <a className = " right half-width text-decor" href='/sign-in'>Sign In</a> 
                     
                 </div>
                 
@@ -37,15 +37,15 @@ const Header = (props) => {
 
 
 return (
-    <div className="flex-row flex-dis head-colors">
-        <div className="flex-row third-width  center flex-dis">
-            <a href="/" className='center third-width'>File</a>
-            <a href="/" className='center third-width'>Edit</a>
-            <a href="/" className='center  third-width'>Help</a>
+    <div className="flex-row flex-dis head-colors ">
+        <div className="flex-row third-width  center flex-dis margin-auto">
+            <a href="/" className='center third-width text-decor'>File</a>
+            <a href="/" className='center third-width text-decor'>Edit</a>
+            <a href="/" className='center  third-width text-decor'>Help</a>
         </div>
         <div className="flex-row third-width center">
             <div className = "center center-text">
-                <a className = "center  logo" href='/'> AxE</a>
+                <a className = "center  logo text-decor" href='/'> AxE</a>
             </div>
 
         </div>
@@ -54,7 +54,7 @@ return (
                 {renderSignInOutButtons()}
             </div>
             
-            <div className="full-width">
+            <div className="full-width text-decor">
                 Welcome {props.user.firstName}
             </div>
 

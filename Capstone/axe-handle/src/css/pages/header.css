@@ -4,5 +4,9 @@
 }
 
 .head-colors {
-    background-color: rgba(164, 250, 66, 0.541);
+    background-color: #18ab29;
+}
+
+.sec-bar {
+    background-color: aliceblue;
 }

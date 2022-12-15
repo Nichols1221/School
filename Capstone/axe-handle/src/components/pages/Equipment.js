@@ -3,7 +3,7 @@ import { useState } from 'react';
 import React from 'react'
 
 
-const Equipment = ()=> {
+const Equipment = (props)=> {
 
     const navigator = useNavigate()
 
@@ -14,9 +14,33 @@ const Equipment = ()=> {
     }
 
     const clickHandlerE = () => {
-        navigator('/')
+        navigator('/VeiwEquipment')
 
 
+    }
+
+    const renderButtons = () => {
+        console.log(props.user)
+        if (props.user.id === undefined) {
+            return (
+
+                <div className="center">
+                        Hello! Welcome to Auxilary Equipment. Here you are able to create equipment records and manage those records. Please sign up or sign in to continue.
+                </div>
+               
+               
+                
+            )
+        } else {
+            return (
+
+                <div className="flex-row flex-dis third-width">
+                <button className='general-buttons ' onClick={clickHandler}>New Equipment</button>
+                <button className='general-buttons ' onClick={clickHandlerE}>View Equipment</button>
+            </div>
+               
+            )
+        }
     }
 
 
@@ -24,12 +48,10 @@ const Equipment = ()=> {
 
         <div className="flex-col flex-dis ">
             <div className="flex-row flex-dis">
-                <div className="flex-col flex-dis third-width">
-                        <button onClick={clickHandler}>New Equipment</button>
-                        <button onClick={clickHandlerE}>View Equipment</button>
-                </div>
+                {renderButtons()}
+               
                 <div className="flex-col six-width">
-                    text
+                    
                 </div>
             </div>
 

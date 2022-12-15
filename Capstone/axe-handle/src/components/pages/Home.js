@@ -25,7 +25,7 @@ function Home(props) {
     }, [])
  
   return (
-    <div className='flex-col full-cont'>
+    <div className='flex-col full-cont ninty-width margin-auto '>
      
       <Main/>
       

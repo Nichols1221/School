@@ -1,4 +1,4 @@
-import Header from "../reusables/Header"
+
 
 import { useState } from "react"
 import { useNavigate } from "react-router"
@@ -37,14 +37,14 @@ const SignIn = () => {
     }
 
     return (
-        <div className="flex-col full-view container">
+        <div className="flex-col full-cont">
                 
             <div className="center flex-col">
                 <h1>
                     Sign In
                 </h1>
                 <div className="sign-up-form flex-col">
-                    <label>Username</label>
+                    <label>Email</label>
                     <input placeholder="TYPE HERE" type='text' name="email" value={user.email} onChange={changeHandler} />
                     <label>Password</label>
                     <input type='password' name="password" value={user.password} onChange={changeHandler} />

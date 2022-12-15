@@ -30,11 +30,16 @@ const Main = () => {
 
 
     return (
-        <div className='flex-dis flex-col'>
+        <div className='flex-dis flex-col '>
+            <div className='flex-row margin-auto between-height'>
 
-            <div className='flex-row flex-dis '>
-                <button className='half-width center center-text' onClick={clickHandlerW}> Work Orders</button>
-                <button className='half-width center center-text' onClick={clickHandler}> Equipment</button>
+            </div>
+
+            <div className='flex-row flex-dis center  '>
+                
+                <div className='fifth-width'>
+                <button className='half-width center center-text general-buttons ' onClick={clickHandler}> Equipment</button>
+                </div>
             </div>
             <div>
                 <div className="flex-col full-view container">
